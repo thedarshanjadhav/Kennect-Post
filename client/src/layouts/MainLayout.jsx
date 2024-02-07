@@ -11,7 +11,7 @@ export default function MainLayout(){
     useEffect(() => {
         const fetchData = async() => {
             try{
-                const response = await axios.get('http://localhost:3001/');
+                const response = await axios.get('https://kennectpostbackend.onrender.com/');
                 dispatch(getPost(response.data));
             } catch(err){
                 console.log(err);

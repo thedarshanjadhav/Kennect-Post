@@ -28,7 +28,7 @@ export default function Posts() {
         setShowModal(false);
 
         try {
-            const response = await axios.post('http://localhost:3001/user', { name: userName });
+            const response = await axios.post('https://kennectpostbackend.onrender.com/user', { name: userName });
             dispatch(addUser(response.data.user));
         } catch (error) {
             console.error("Error creating user:", error);

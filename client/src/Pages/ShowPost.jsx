@@ -13,7 +13,7 @@ export default function ShowPost() {
 
     useEffect(() => {
         // Fetch single post data 
-        axios.get(`http://localhost:3001/${id}`)
+        axios.get(`https://kennectpostbackend.onrender.com/${id}`)
             .then(res => {
                 console.log('Received single post data:', res.data.singlePost);
                 dispatch(getSinglePost(res.data.singlePost));
@@ -21,7 +21,7 @@ export default function ShowPost() {
             .catch(err => console.error('Error fetching single post:', err));
 
         // Fetch comments for the post
-        axios.get(`http://localhost:3001/${id}/comments`)
+        axios.get(`https://kennectpostbackend.onrender.com/${id}/comments`)
             .then(res => {
                 console.log('Received comments:', res.data.comments);
                 setComments(res.data.comments);
@@ -35,7 +35,7 @@ export default function ShowPost() {
         event.preventDefault();
         try {
             // Add comment
-            const commentResponse = await axios.post(`http://localhost:3001/${id}/comments`, { newComment });
+            const commentResponse = await axios.post(`https://kennectpostbackend.onrender.com/${id}/comments`, { newComment });
             dispatch(addComment(commentResponse.data));
         } catch (error) {
             console.error("Error adding comment:", error);

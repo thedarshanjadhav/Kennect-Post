@@ -14,7 +14,7 @@ export default function CreatePost(){
 
     const handleSubmit= (e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/create', { newPost, user: currentUser })
+        axios.post('https://kennectpostbackend.onrender.com/create', { newPost, user: currentUser })
         .then(res => {
             dispatch(addPost(res.data));
             navigate('/');
